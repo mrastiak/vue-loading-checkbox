@@ -1,11 +1,34 @@
 <template>
-  <div id="loadingCheckbox" :style="containerStyles">
-    <div class="checkbox" :class="status" :style="checkboxStyles">
-      <div class="loading" v-if="status === 'loading'" :style="loadingStyle"></div>
-      <div class="check" v-else-if="status === 'checked'" :style="checkStyles"></div>
-      <div class="unchecked" v-else></div>
+  <div
+    id="loadingCheckbox"
+    :style="containerStyles"
+  >
+    <div
+      class="checkbox"
+      :class="status"
+      :style="checkboxStyles"
+    >
+      <div
+        class="loader"
+        ref="loading"
+        v-if="status === 'loading'"
+        :style="loaderStyles"
+      ></div>
+      <div
+        class="check"
+        v-else-if="status === 'checked'"
+        :style="checkStyles"
+      ></div>
+      <div
+        class="empty"
+        v-else
+      ></div>
     </div>
-    <p class="label" v-if="label" :style="labelStyles">{{ label }}</p>
+    <p
+      class="label"
+      v-if="label"
+      :style="labelStyles"
+    >{{ label }}</p>
   </div>
 </template>
 
@@ -45,13 +68,23 @@ export default {
           borderStyle: 'solid',
           position: 'relative'
         },
-        this.checkedStyles
+        this.checkedStyles,
+        this.loadingStyles
       )
     },
     checkedStyles () {
       if (this.status === 'checked') {
         return {
-          background: 'red'
+          background: 'gray'
+        }
+      } else {
+        return {}
+      }
+    },
+    loadingStyles () {
+      if (this.status === 'loading') {
+        return {
+          background: 'gray'
         }
       } else {
         return {}
@@ -70,15 +103,17 @@ export default {
         borderWidth: `0 ${this.size * 0.1 >= 2 ? this.size * 0.1 : 2}px ${this.size * 0.1 >= 2 ? this.size * 0.1 : 2}px 0`
       }
     },
-    loadingStyle () {
-      return {
-        border: '6px solid #f3f3f3',
-        borderRadius: '50%',
-        borderTop: '16px solid #3498db',
-        width: '20px',
-        height: '20px',
-        animation: 'spin 2s linear infinite'
-      }
+    loaderStyles () {
+      return Object.assign(
+        {
+          border: `${this.size * 0.2}px solid lightgray`,
+          borderRadius: '50%',
+          borderTop: `${this.size * 0.2}px solid black`,
+          width: `${this.size}px`,
+          height: `${this.size}px`,
+          boxSizing: 'border-box'
+        }
+      )
     },
     containerStyles () {
       return Object.assign(
@@ -124,18 +159,18 @@ export default {
   *
     padding: 0
     margin: 0
+  @-webkit-keyframes spin
+    0%
+      -webkit-transform: rotate(0deg)
+    100%
+      -webkit-transform: rotate(360deg)
 
-  #loadingCheckbox
-    @-webkit-keyframes spin
-      0%
-        -webkit-transform: rotate(0deg)
-      100%
-        -webkit-transform: rotate(360deg)
+  @keyframes spin
+    0%
+      transform: rotate(0deg)
+    100%
+      transform: rotate(360deg)
 
-    @keyframes spin
-      0%
-        transform: rotate(0deg)
-      100%
-        transform: rotate(360deg)
-
+  .loader
+    animation: spin 1s linear infinite
 </style>
