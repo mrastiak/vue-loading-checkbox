@@ -37,7 +37,8 @@
     "vue.js",
     "vuejs",
     "component",
-    "checkbox"
+    "checkbox",
+    "loading"
   ],
   "homepage": "https://github.com/Carrene/vue-loading-checkbox",
   "bugs": {
