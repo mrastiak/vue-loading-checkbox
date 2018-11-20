@@ -62,11 +62,7 @@ export default {
       return Object.assign(
         {
           width: `${this.size}px`,
-          height: `${this.size}px`,
-          borderWidth: '1px',
-          borderColor: 'black',
-          borderStyle: 'solid',
-          position: 'relative'
+          height: `${this.size}px`
         },
         this.checkedStyles,
         this.loadingStyles
@@ -92,12 +88,6 @@ export default {
     },
     checkStyles () {
       return {
-        position: 'absolute',
-        border: 'solid white',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-60%, -65%) rotate(45deg)',
-        transformOrigin: '55% 55%',
         width: `${this.size * 0.33}px`,
         height: `${this.size * 0.66}px`,
         borderWidth: `0 ${this.size * 0.1 >= 2 ? this.size * 0.1 : 2}px ${this.size * 0.1 >= 2 ? this.size * 0.1 : 2}px 0`
@@ -107,23 +97,15 @@ export default {
       return Object.assign(
         {
           border: `${this.size * 0.2}px solid lightgray`,
-          borderRadius: '50%',
           borderTop: `${this.size * 0.2}px solid black`,
           width: `${this.size}px`,
-          height: `${this.size}px`,
-          boxSizing: 'border-box'
+          height: `${this.size}px`
         }
       )
     },
     containerStyles () {
       return Object.assign(
-        {
-          display: 'grid',
-          gridTemplateColumns: 'auto 1fr',
-          alignItems: 'center',
-          width: 'fit-content',
-          cursor: 'pointer'
-        },
+        {},
         this.computedGap
       )
     },
@@ -171,6 +153,28 @@ export default {
     100%
       transform: rotate(360deg)
 
-  .loader
-    animation: spin 1s linear infinite
+  #loadingCheckbox
+    display: grid
+    grid-template-columns: auto 1fr
+    align-items: center
+    width: fit-content
+    cursor: pointer
+    .checkbox
+      border-width: 1px
+      border-color: black
+      border-style: solid
+      position: relative
+
+    .loader
+      animation: spin 1s linear infinite
+      border-radius: 50%
+      box-sizing: border-box
+
+    .check
+      position: absolute
+      border: solid white
+      top: 50%
+      left: 50%
+      transform: translate(-60%, -65%) rotate(45deg)
+      transform-origin: 55% 55%
 </style>
