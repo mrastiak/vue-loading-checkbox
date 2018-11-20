@@ -1,11 +1,21 @@
 {
   "name": "vue-loading-checkbox",
+  "description": "A Vue.js UI component for Loading Checkbox",
+  "main": "./dist/LoadingCheckbox.common.js",
   "version": "0.1.0",
-  "private": true,
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build": "vue-cli-service build --dest docs",
+    "build-bundle": "vue-cli-service build --target lib --name LoadingCheckbox ./src/components/LoadingCheckbox.vue",
+    "lint": "vue-cli-service lint",
+    "prepare": "npm run build-bundle"
   },
   "dependencies": {
     "vue": "^2.5.17"
@@ -21,5 +31,32 @@
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
     "vue-template-compiler": "^2.5.17"
-  }
+  },
+  "keywords": [
+    "vue",
+    "vue.js",
+    "vuejs",
+    "component",
+    "checkbox"
+  ],
+  "homepage": "https://github.com/Carrene/vue-loading-checkbox",
+  "bugs": {
+    "url": "https://github.com/Carrene/vue-loading-checkbox/issues"
+  },
+  "author": "Armin Ayari <armin.ayari@gmail.com>",
+  "contributors": [
+    {
+      "name": "Mahdi Aryayi",
+      "email": "mahdiaryayi@gmail.com"
+    },
+    {
+      "name": "Armin Ayari",
+      "email": "armin.ayari@gmail.com"
+    },
+    {
+      "name": "Shirin Eghrari",
+      "email": "eghrarish@gmail.com"
+    }
+  ],
+  "license": "MIT"
 }
