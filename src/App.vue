@@ -5,6 +5,7 @@
       :size="50"
       :status="status"
       @click.native="check"
+      class="checkbox"
     />
   </div>
 </template>
@@ -39,4 +40,7 @@ export default {
 </script>
 
 <style lang="sass">
+#app
+  margin: 100px auto
+  width: fit-content
 </style>
