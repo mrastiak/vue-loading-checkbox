@@ -1,4 +1,14 @@
-# vue-loading-checkbox
+<p align="center">
+  <a href="#">
+    <img src="https://github.com/Carrene/vue-loading-checkbox/blob/master/src/assets/checkbox-demo.gif?raw=true" alt="vue-loading-checkbox" />
+  </a>
+</p>
+
+<h1 align="center" >vue-loading-checkbox</h1>
+
+<p align="center" class="badges" >
+  <a href="https://www.npmjs.com/package/vue-loading-checkbox"><img src="https://badge.fury.io/js/vue-loading-checkbox.svg" alt="npm version" /></a>
+</p>
 
 A vue UI component for loading checkbox
 
