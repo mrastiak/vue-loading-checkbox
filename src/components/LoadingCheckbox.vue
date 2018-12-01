@@ -76,21 +76,11 @@ export default {
           borderStyle: 'solid',
           position: 'relative'
         },
-        this.checkedStyles,
-        this.loadingStyles
+        this.checkedStyles
       )
     },
     checkedStyles () {
       if (this.status === 'checked') {
-        return {
-          background: 'gray'
-        }
-      } else {
-        return {}
-      }
-    },
-    loadingStyles () {
-      if (this.status === 'loading') {
         return {
           background: 'gray'
         }
@@ -123,9 +113,10 @@ export default {
     },
     labelStyles () {
       return Object.assign(
-        {},
-        this.labelFontSize,
-        this.labelColor
+        {
+          color: this.fontColor
+        },
+        this.labelFontSize
       )
     },
     labelFontSize () {
@@ -138,17 +129,6 @@ export default {
         return {
           fontSize: `${this.size * 1.1}px`,
           lineHeight: `${this.size * 1.1}px`
-        }
-      }
-    },
-    labelColor () {
-      if (this.fontColor) {
-        return {
-          color: this.fontColor
-        }
-      } else {
-        return {
-          color: `black`
         }
       }
     },
