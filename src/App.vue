@@ -7,6 +7,7 @@
       @click.native="check"
       class="checkbox"
     />
+
   </div>
 </template>
 

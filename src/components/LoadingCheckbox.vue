@@ -34,7 +34,7 @@
 
 <script>
 export default {
-  name: 'PendingCheckbox',
+  name: 'LoadingCheckbox',
   props: {
     status: {
       type: String,
@@ -52,9 +52,17 @@ export default {
       type: Number,
       default: null
     },
+    fontColor: {
+      type: String,
+      default: 'black'
+    },
     gap: {
       type: Number,
       default: null
+    },
+    borderColor: {
+      type: String,
+      default: 'black'
     }
   },
   computed: {
@@ -62,23 +70,17 @@ export default {
       return Object.assign(
         {
           width: `${this.size}px`,
-          height: `${this.size}px`
+          height: `${this.size}px`,
+          borderWidth: '1px',
+          borderColor: this.borderColor,
+          borderStyle: 'solid',
+          position: 'relative'
         },
-        this.checkedStyles,
-        this.loadingStyles
+        this.checkedStyles
       )
     },
     checkedStyles () {
       if (this.status === 'checked') {
-        return {
-          background: 'gray'
-        }
-      } else {
-        return {}
-      }
-    },
-    loadingStyles () {
-      if (this.status === 'loading') {
         return {
           background: 'gray'
         }
@@ -110,6 +112,14 @@ export default {
       )
     },
     labelStyles () {
+      return Object.assign(
+        {
+          color: this.fontColor
+        },
+        this.labelFontSize
+      )
+    },
+    labelFontSize () {
       if (this.fontSize) {
         return {
           fontSize: `${this.fontSize}px`,
