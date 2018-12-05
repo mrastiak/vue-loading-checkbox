@@ -36,33 +36,107 @@
 export default {
   name: 'LoadingCheckbox',
   props: {
+    // GENERAL PROPS
+
     status: {
       type: String,
       default: 'unchecked'
-    },
-    label: {
-      type: String,
-      default: null
     },
     size: {
       type: Number,
       default: 30
     },
-    fontSize: {
+    gap: {
       type: Number,
+      default: null
+    },
+    borderWidth: {
+      type: String,
+      default: '1px'
+    },
+    borderStyle: {
+      type: String,
+      default: 'solid'
+    },
+    borderColor: {
+      type: String,
+      default: 'black'
+    },
+
+    // LABEL PROPS
+
+    label: {
+      type: String,
       default: null
     },
     fontColor: {
       type: String,
       default: 'black'
     },
-    gap: {
+    fontSize: {
       type: Number,
       default: null
     },
-    borderColor: {
+
+    // CHECKED PROPS
+
+    checkedBackgroundColor: {
       type: String,
-      default: 'black'
+      default: 'gray'
+    },
+    checkedBorderWidth: {
+      type: String,
+      default: null
+    },
+    checkedBorderStyle: {
+      type: String,
+      default: null
+    },
+    checkedBorderColor: {
+      type: String,
+      default: null
+    },
+    checkColor: {
+      type: String,
+      default: 'white'
+    },
+
+    // LOADING PROPS
+
+    loadingBackgroundColor: {
+      type: String,
+      default: 'white'
+    },
+    loadingBorderWidth: {
+      type: String,
+      default: null
+    },
+    loadingBorderStyle: {
+      type: String,
+      default: null
+    },
+    loadingBorderColor: {
+      type: String,
+      default: null
+    },
+
+    // UNCHECKED PROPS
+
+    uncheckedBackgroundColor: {
+      type: String,
+      default: 'white'
+    },
+    uncheckedBorderWidth: {
+      type: String,
+      default: null
+    },
+    uncheckedBorderStyle: {
+      type: String,
+      default: null
+    },
+    uncheckedBorderColor: {
+      type: String,
+      default: null
     }
   },
   computed: {
@@ -71,28 +145,43 @@ export default {
         {
           width: `${this.size}px`,
           height: `${this.size}px`,
-          borderWidth: '1px',
-          borderColor: this.borderColor,
-          borderStyle: 'solid',
           position: 'relative'
         },
-        this.checkedStyles
+        this.status === 'checked' ? this.checkedStyles : {},
+        this.status === 'loading' ? this.loadingStyles : {},
+        this.status === 'unchecked' ? this.uncheckedStyles : {}
       )
     },
     checkedStyles () {
-      if (this.status === 'checked') {
-        return {
-          background: 'gray'
-        }
-      } else {
-        return {}
+      return {
+        backgroundColor: this.checkedBackgroundColor,
+        borderWidth: this.checkedBorderWidth || this.borderWidth,
+        borderStyle: this.checkedBorderStyle || this.borderStyle,
+        borderColor: this.checkedBorderColor || this.borderColor
+      }
+    },
+    loadingStyles () {
+      return {
+        backgroundColor: this.loadingBackgroundColor,
+        borderWidth: this.loadingBorderWidth || this.borderWidth,
+        borderColor: this.loadingBorderColor || this.borderColor,
+        borderStyle: this.loadingBorderStyle || this.borderStyle
+      }
+    },
+    uncheckedStyles () {
+      return {
+        backgroundColor: this.uncheckedBackgroundColor,
+        borderWidth: this.uncheckedBorderWidth || this.borderWidth,
+        borderColor: this.uncheckedBorderColor || this.borderColor,
+        borderStyle: this.uncheckedBorderStyle || this.borderStyle
       }
     },
     checkStyles () {
       return {
         width: `${this.size * 0.33}px`,
         height: `${this.size * 0.66}px`,
-        borderWidth: `0 ${this.size * 0.1 >= 2 ? this.size * 0.1 : 2}px ${this.size * 0.1 >= 2 ? this.size * 0.1 : 2}px 0`
+        borderWidth: `0 ${this.size * 0.1 >= 2 ? this.size * 0.1 : 2}px ${this.size * 0.1 >= 2 ? this.size * 0.1 : 2}px 0`,
+        borderColor: this.checkColor
       }
     },
     loaderStyles () {
@@ -182,7 +271,7 @@ export default {
 
     .check
       position: absolute
-      border: solid white
+      border-style: solid
       top: 50%
       left: 50%
       transform: translate(-60%, -65%) rotate(45deg)
