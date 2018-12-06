@@ -83,8 +83,8 @@ export default {
 | `loadingBorderWidth`       | Border width of checkbox when status is loading                  | `null` (same as `borderWidth`)      |
 | `loadingBorderStyle`       | Border style of checkbox when status is loading                  | `null` (same as `borderStyle`)      |
 | `loadingBorderColor`       | Border color of checkbox when status is loading                  | `null` (same as `borderColor`)      |
-| `loaderRingColor`          | Color of loading ring                                            | `lightgray`                         |
-| `loaderSpinnerColor`       | Color of spinner                                                 | `black`                             |
+| `spinnerRingColor`         | Color of loading ring                                            | `lightgray`                         |
+| `spinnerColor`             | Color of spinner                                                 | `black`                             |
 | `uncheckedBackgroundColor` | Background color of checkbox when status is unchecked            | `white`                             |
 | `uncheckedBorderWidth`     | Border width of checkbox when status is unchecked                | `null` (same as `borderWidth`)      |
 | `uncheckedBorderStyle`     | Border style of checkbox when status is unchecked                | `null` (same as `borderStyle`)      |
