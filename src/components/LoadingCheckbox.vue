@@ -119,6 +119,14 @@ export default {
       type: String,
       default: null
     },
+    loaderRingColor: {
+      type: String,
+      default: 'lightgray'
+    },
+    loaderSpinnerColor: {
+      type: String,
+      default: 'black'
+    },
 
     // UNCHECKED PROPS
 
@@ -187,8 +195,11 @@ export default {
     loaderStyles () {
       return Object.assign(
         {
-          border: `${this.size * 0.2}px solid lightgray`,
-          borderTop: `${this.size * 0.2}px solid black`,
+          borderWidth: `${this.size * 0.2}px`,
+          borderStyle: 'solid',
+          borderColor: this.loaderRingColor,
+          borderTopWidth: `${this.size * 0.2}px`,
+          borderTopColor: this.loaderSpinnerColor,
           width: `${this.size}px`,
           height: `${this.size}px`
         }
@@ -259,9 +270,6 @@ export default {
     width: fit-content
     cursor: pointer
     .checkbox
-      border-width: 1px
-      border-color: black
-      border-style: solid
       position: relative
 
     .loader
