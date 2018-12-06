@@ -119,11 +119,11 @@ export default {
       type: String,
       default: null
     },
-    loaderRingColor: {
+    spinnerRingColor: {
       type: String,
       default: 'lightgray'
     },
-    loaderSpinnerColor: {
+    spinnerColor: {
       type: String,
       default: 'black'
     },
@@ -197,9 +197,9 @@ export default {
         {
           borderWidth: `${this.size * 0.2}px`,
           borderStyle: 'solid',
-          borderColor: this.loaderRingColor,
+          borderColor: this.spinnerRingColor,
           borderTopWidth: `${this.size * 0.2}px`,
-          borderTopColor: this.loaderSpinnerColor,
+          borderTopColor: this.spinnerColor,
           width: `${this.size}px`,
           height: `${this.size}px`
         }
