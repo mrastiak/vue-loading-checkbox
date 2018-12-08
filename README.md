@@ -27,7 +27,8 @@ Inside your `.vue` files
   <div id="your-component">
     <!-- Using Component -->
     <loading-checkbox
-      :status="status"
+      :checked="checked"
+      :loading="loading"
       label="Title of checkbox"
       @click.native="toggleStatus"
     />
@@ -42,15 +43,16 @@ export default {
   name: 'YourComponentName',
   data() {
     return {
-      status: 'unchecked'
+      checked: false,
+      loading: false
     }
   },
   methods: {
     toggleStatus() {
-      let prevStatus = this.status
-      this.status = 'loading'
+      this.loading = true
       setTimeout(() => {
-        this.status = prevStatus === 'checked' ? 'unchecked' : 'checked'
+        this.loading = false
+        this.checked = !this.checked
       }, 2000)
     }
   },
