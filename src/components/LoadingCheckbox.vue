@@ -5,18 +5,17 @@
   >
     <div
       class="checkbox"
-      :class="status"
       :style="checkboxStyles"
     >
       <div
         class="loader"
         ref="loading"
-        v-if="status === 'loading'"
+        v-if="loading"
         :style="loaderStyles"
       ></div>
       <div
         class="check"
-        v-else-if="status === 'checked'"
+        v-else-if="checked"
         :style="checkStyles"
       ></div>
       <div
@@ -38,9 +37,13 @@ export default {
   props: {
     // GENERAL PROPS
 
-    status: {
-      type: String,
-      default: 'unchecked'
+    checked: {
+      type: Boolean,
+      default: false
+    },
+    loading: {
+      type: Boolean,
+      default: false
     },
     size: {
       type: Number,
@@ -155,9 +158,9 @@ export default {
           height: `${this.size}px`,
           position: 'relative'
         },
-        this.status === 'checked' ? this.checkedStyles : {},
-        this.status === 'loading' ? this.loadingStyles : {},
-        this.status === 'unchecked' ? this.uncheckedStyles : {}
+        this.checked && !this.loading ? this.checkedStyles : {},
+        this.loading ? this.loadingStyles : {},
+        !this.checked && !this.loading ? this.uncheckedStyles : {}
       )
     },
     checkedStyles () {
