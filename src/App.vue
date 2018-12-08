@@ -3,7 +3,8 @@
     <loading-checkbox
       label="Checkbox"
       :size="50"
-      :status="status"
+      :checked="checked"
+      :loading="loading"
       @click.native="check"
       class="checkbox"
     />
@@ -18,19 +19,16 @@ export default {
   name: 'App',
   data () {
     return {
-      status: 'unchecked'
+      checked: false,
+      loading: false
     }
   },
   methods: {
     check () {
-      let prevStatus = this.status
-      this.status = 'loading'
+      this.loading = true
       setTimeout(() => {
-        if (prevStatus === 'unchecked') {
-          this.status = 'checked'
-        } else if (prevStatus === 'checked') {
-          this.status = 'unchecked'
-        }
+        this.loading = false
+        this.checked = !this.checked
       }, 1000)
     }
   },
