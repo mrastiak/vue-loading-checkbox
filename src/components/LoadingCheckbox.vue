@@ -14,10 +14,17 @@
         :style="loaderStyles"
       ></div>
       <div
-        class="check"
+        :class="checkIcon ? 'checkContainer' : 'check'"
         v-else-if="checked"
-        :style="checkStyles"
-      ></div>
+        :style="!checkIcon ? checkStyles : null"
+      >
+        <img
+          v-if="checkIcon"
+          :src="checkIcon"
+          class="icon"
+          :style="iconStyles"
+        >
+      </div>
       <div
         class="empty"
         v-else
@@ -148,6 +155,14 @@ export default {
     uncheckedBorderColor: {
       type: String,
       default: null
+    },
+    checkIcon: {
+      type: String,
+      default: null
+    },
+    checkIconPadding: {
+      type: String,
+      default: null
     }
   },
   computed: {
@@ -193,6 +208,11 @@ export default {
         height: `${this.size * 0.66}px`,
         borderWidth: `0 ${this.size * 0.1 >= 2 ? this.size * 0.1 : 2}px ${this.size * 0.1 >= 2 ? this.size * 0.1 : 2}px 0`,
         borderColor: this.checkColor
+      }
+    },
+    iconStyles () {
+      return {
+        padding: this.checkIconPadding
       }
     },
     loaderStyles () {
@@ -287,4 +307,13 @@ export default {
       left: 50%
       transform: translate(-60%, -65%) rotate(45deg)
       transform-origin: 55% 55%
+
+    .check-container
+      display: grid
+      height: 100%
+      align-items: center
+      .icon
+        max-height: 100%
+        max-width: 100%
+        box-sizing: border-box
 </style>
