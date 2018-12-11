@@ -2,7 +2,7 @@
   "name": "vue-loading-checkbox",
   "description": "A Vue.js UI component for Loading Checkbox",
   "main": "./dist/LoadingCheckbox.common.js",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "files": [
     "dist/*",
     "src/*",
