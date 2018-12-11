@@ -65,39 +65,53 @@ export default {
 
 ## Component props
 
-| prop                       | description                                                                      | default                             |
-| -------------------------- | -------------------------------------------------------------------------------- | ----------------------------------- |
-| `borderColor`              | Color of checkbox border                                                         | `black`                             |
-| `borderRadius`             | Border radius of checkbox                                                        | `0`                                 |
-| `borderStyle`              | Style of checkbox border, (solid, dashed, dotted, ...)                           | `solid`                             |
-| `borderWidth`              | width of checkbox border. You have to insert unit (`px`,`em`...)                 | `1px`                               |
-| `checkColor`               | Color of check mark                                                              | `white`                             |
-| `checked`                  | Status of component. can be `true`(checked) or `false`(unchecked)                | `false`                             |
-| `checkedBackgroundColor`   | Background color of checkbox when status is checked                              | `gray`                              |
-| `checkedBorderColor`       | Border color of checkbox when status is checked                                  | `null` (same as `borderColor`)      |
-| `checkedBorderRadius`      | Border radius of checkbox when status is checked                                 | `null` (same as `borderRadius`)     |
-| `checkedBorderStyle`       | Border style of checkbox when status is checked                                  | `null` (same as `borderStyle`)      |
-| `checkedBorderWidth`       | Border width of checkbox when status is checked                                  | `null` (same as `borderWidth`)      |
-| `checkIcon`                | Custom check mark image (.svg, png, etc)                                         | `null` A default pure css check     |
-| `checkIconPadding`         | Padding of the given custom check mark image (This will not affect the `size`)   | `null`                              |
-| `fontColor`                | Text color of label                                                              | `black`                             |
-| `fontSize`                 | Font size of label                                                               | `null` (calculated based on `size`) |
-| `gap`                      | Gap size between checkbox and its label in `px`.                                 | `null` (calculated based on `size`) |
-| `label`                    | Label of checkbox                                                                | `null` (no label)                   |
-| `loading`                  | If `true` component is in loading state. it has a higher priority than `checked` | `false`                             |
-| `loadingBackgroundColor`   | Background color of checkbox when status is loading                              | `white`                             |
-| `loadingBorderColor`       | Border color of checkbox when status is loading                                  | `null` (same as `borderColor`)      |
-| `loadingBorderRadius`      | Border radius of checkbox when status is loading                                 | `null` (same as `borderRadius`)     |
-| `loadingBorderStyle`       | Border style of checkbox when status is loading                                  | `null` (same as `borderStyle`)      |
-| `loadingBorderWidth`       | Border width of checkbox when status is loading                                  | `null` (same as `borderWidth`)      |
-| `size`                     | Size of component in `px`.                                                       | `30`                                |
-| `spinnerColor`             | Color of spinner                                                                 | `black`                             |
-| `spinnerRingColor`         | Color of loading ring                                                            | `lightgray`                         |
-| `uncheckedBackgroundColor` | Background color of checkbox when status is unchecked                            | `white`                             |
-| `uncheckedBorderColor`     | Border color of checkbox when status is unchecked                                | `null` (same as `borderColor`)      |
-| `uncheckedBorderRadius`    | Border radius of checkbox when status is unchecked                               | `null` (same as `borderRadius`)     |
-| `uncheckedBorderStyle`     | Border style of checkbox when status is unchecked                                | `null` (same as `borderStyle`)      |
-| `uncheckedBorderWidth`     | Border width of checkbox when status is unchecked                                | `null` (same as `borderWidth`)      |
+| prop                       | description                                                                         | default                             |
+| -------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------- |
+| `borderColor`              | Color of checkbox border                                                            | `black`                             |
+| `borderRadius`             | Border radius of checkbox                                                           | `0`                                 |
+| `borderStyle`              | Style of checkbox border, (solid, dashed, dotted, ...)                              | `solid`                             |
+| `borderWidth`              | width of checkbox border. You have to insert unit (`px`,`em`...)                    | `1px`                               |
+| `checkColor`               | Color of check mark                                                                 | `white`                             |
+| `checked`                  | Status of component. can be `true`(checked) or `false`(unchecked)                   | `false`                             |
+| `checkedBackgroundColor`   | Background color of checkbox when status is checked                                 | `gray`                              |
+| `checkedBorderColor`       | Border color of checkbox when status is checked                                     | `null` (same as `borderColor`)      |
+| `checkedBorderRadius`      | Border radius of checkbox when status is checked                                    | `null` (same as `borderRadius`)     |
+| `checkedBorderStyle`       | Border style of checkbox when status is checked                                     | `null` (same as `borderStyle`)      |
+| `checkedBorderWidth`       | Border width of checkbox when status is checked                                     | `null` (same as `borderWidth`)      |
+| `checkIcon`                | Custom check mark image (.svg, png, etc). you have to pass it with require function | `null` A default pure css check     |
+| `checkIconPadding`         | Padding of the given custom check mark image (This will not affect the `size`)      | `null`                              |
+| `fontColor`                | Text color of label                                                                 | `black`                             |
+| `fontSize`                 | Font size of label                                                                  | `null` (calculated based on `size`) |
+| `gap`                      | Gap size between checkbox and its label in `px`.                                    | `null` (calculated based on `size`) |
+| `label`                    | Label of checkbox                                                                   | `null` (no label)                   |
+| `loading`                  | If `true` component is in loading state. it has a higher priority than `checked`    | `false`                             |
+| `loadingBackgroundColor`   | Background color of checkbox when status is loading                                 | `white`                             |
+| `loadingBorderColor`       | Border color of checkbox when status is loading                                     | `null` (same as `borderColor`)      |
+| `loadingBorderRadius`      | Border radius of checkbox when status is loading                                    | `null` (same as `borderRadius`)     |
+| `loadingBorderStyle`       | Border style of checkbox when status is loading                                     | `null` (same as `borderStyle`)      |
+| `loadingBorderWidth`       | Border width of checkbox when status is loading                                     | `null` (same as `borderWidth`)      |
+| `size`                     | Size of component in `px`.                                                          | `30`                                |
+| `spinnerColor`             | Color of spinner                                                                    | `black`                             |
+| `spinnerRingColor`         | Color of loading ring                                                               | `lightgray`                         |
+| `uncheckedBackgroundColor` | Background color of checkbox when status is unchecked                               | `white`                             |
+| `uncheckedBorderColor`     | Border color of checkbox when status is unchecked                                   | `null` (same as `borderColor`)      |
+| `uncheckedBorderRadius`    | Border radius of checkbox when status is unchecked                                  | `null` (same as `borderRadius`)     |
+| `uncheckedBorderStyle`     | Border style of checkbox when status is unchecked                                   | `null` (same as `borderStyle`)      |
+| `uncheckedBorderWidth`     | Border width of checkbox when status is unchecked                                   | `null` (same as `borderWidth`)      |
+
+:warning: Warning: You have to v-bind custom icon path with `require` function:
+
+`v-bind:checkIcon="require(@/assets/path/to/icon.svg)"` :heavy_check_mark:
+
+`:checkIcon="require(@/assets/path/to/icon.svg)"` :heavy_check_mark:
+
+`checkIcon="@/assets/path/to/icon.svg"` :x:
+
+`checkIcon="require(@/assets/path/to/icon.svg)"` :x:
+
+## Contributing
+
+Visit [CONTRIBUTING Page](https://github.com/Carrene/vue-loading-checkbox/blob/master/CONTRIBUTING.md)
 
 ## Project setup
 
