@@ -68,12 +68,14 @@ export default {
 | prop                       | description                                                                      | default                             |
 | -------------------------- | -------------------------------------------------------------------------------- | ----------------------------------- |
 | `borderColor`              | Color of checkbox border                                                         | `black`                             |
+| `borderRadius`             | Border radius of checkbox                                                        | `0`                                 |
 | `borderStyle`              | Style of checkbox border, (solid, dashed, dotted, ...)                           | `solid`                             |
 | `borderWidth`              | width of checkbox border. You have to insert unit (`px`,`em`...)                 | `1px`                               |
 | `checkColor`               | Color of check mark                                                              | `white`                             |
 | `checked`                  | Status of component. can be `true`(checked) or `false`(unchecked)                | `false`                             |
 | `checkedBackgroundColor`   | Background color of checkbox when status is checked                              | `gray`                              |
 | `checkedBorderColor`       | Border color of checkbox when status is checked                                  | `null` (same as `borderColor`)      |
+| `checkedBorderRadius`      | Border radius of checkbox when status is checked                                 | `null` (same as `borderRadius`)     |
 | `checkedBorderStyle`       | Border style of checkbox when status is checked                                  | `null` (same as `borderStyle`)      |
 | `checkedBorderWidth`       | Border width of checkbox when status is checked                                  | `null` (same as `borderWidth`)      |
 | `checkIcon`                | Custom check mark image (.svg, png, etc)                                         | `null` A default pure css check     |
@@ -85,6 +87,7 @@ export default {
 | `loading`                  | If `true` component is in loading state. it has a higher priority than `checked` | `false`                             |
 | `loadingBackgroundColor`   | Background color of checkbox when status is loading                              | `white`                             |
 | `loadingBorderColor`       | Border color of checkbox when status is loading                                  | `null` (same as `borderColor`)      |
+| `loadingBorderRadius`      | Border radius of checkbox when status is loading                                 | `null` (same as `borderRadius`)     |
 | `loadingBorderStyle`       | Border style of checkbox when status is loading                                  | `null` (same as `borderStyle`)      |
 | `loadingBorderWidth`       | Border width of checkbox when status is loading                                  | `null` (same as `borderWidth`)      |
 | `size`                     | Size of component in `px`.                                                       | `30`                                |
@@ -92,6 +95,7 @@ export default {
 | `spinnerRingColor`         | Color of loading ring                                                            | `lightgray`                         |
 | `uncheckedBackgroundColor` | Background color of checkbox when status is unchecked                            | `white`                             |
 | `uncheckedBorderColor`     | Border color of checkbox when status is unchecked                                | `null` (same as `borderColor`)      |
+| `uncheckedBorderRadius`    | Border radius of checkbox when status is unchecked                               | `null` (same as `borderRadius`)     |
 | `uncheckedBorderStyle`     | Border style of checkbox when status is unchecked                                | `null` (same as `borderStyle`)      |
 | `uncheckedBorderWidth`     | Border width of checkbox when status is unchecked                                | `null` (same as `borderWidth`)      |
 

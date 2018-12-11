@@ -72,6 +72,10 @@ export default {
       type: String,
       default: 'black'
     },
+    borderRadius: {
+      type: String,
+      default: '0'
+    },
 
     // LABEL PROPS
 
@@ -106,6 +110,10 @@ export default {
       type: String,
       default: null
     },
+    checkedBorderRadius: {
+      type: String,
+      default: null
+    },
     checkColor: {
       type: String,
       default: 'white'
@@ -133,6 +141,10 @@ export default {
       type: String,
       default: 'lightgray'
     },
+    loadingBorderRadius: {
+      type: String,
+      default: null
+    },
     spinnerColor: {
       type: String,
       default: 'black'
@@ -153,6 +165,10 @@ export default {
       default: null
     },
     uncheckedBorderColor: {
+      type: String,
+      default: null
+    },
+    uncheckedBorderRadius: {
       type: String,
       default: null
     },
@@ -183,7 +199,8 @@ export default {
         backgroundColor: this.checkedBackgroundColor,
         borderWidth: this.checkedBorderWidth || this.borderWidth,
         borderStyle: this.checkedBorderStyle || this.borderStyle,
-        borderColor: this.checkedBorderColor || this.borderColor
+        borderColor: this.checkedBorderColor || this.borderColor,
+        borderRadius: this.checkedBorderRadius || this.borderRadius
       }
     },
     loadingStyles () {
@@ -191,7 +208,8 @@ export default {
         backgroundColor: this.loadingBackgroundColor,
         borderWidth: this.loadingBorderWidth || this.borderWidth,
         borderColor: this.loadingBorderColor || this.borderColor,
-        borderStyle: this.loadingBorderStyle || this.borderStyle
+        borderStyle: this.loadingBorderStyle || this.borderStyle,
+        borderRadius: this.loadingBorderRadius || this.borderRadius
       }
     },
     uncheckedStyles () {
@@ -199,7 +217,8 @@ export default {
         backgroundColor: this.uncheckedBackgroundColor,
         borderWidth: this.uncheckedBorderWidth || this.borderWidth,
         borderColor: this.uncheckedBorderColor || this.borderColor,
-        borderStyle: this.uncheckedBorderStyle || this.borderStyle
+        borderStyle: this.uncheckedBorderStyle || this.borderStyle,
+        borderRadius: this.uncheckedBorderRadius || this.borderRadius
       }
     },
     checkStyles () {
